@@ -14,11 +14,23 @@ namespace Gui_WinFormApp.NewFolder
         public int Count { get; set; }
         public double Price { get; set; }
         public string Sku { get; set; }
+        public string phoneNo { get; set; }
+
+        // The below properties will move to their own Customer class later
+        public string Email { get; set; }
+        public string Name { get; set; }
+        // static: because the list is shared for all objects.
+        static List<Product> products = new List<Product>();
         public void save()
         {
-            MessageBox.Show("Saved");
+            products.Add(this);
+           // MessageBox.Show("Saved");
            //DBConnect()
            //Insert
+        }
+        static public List<Product> getAllProducts()
+        {
+            return products;
         }
     }
 }
