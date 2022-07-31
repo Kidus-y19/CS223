@@ -5,11 +5,13 @@ namespace Gui_WinFormApp
 
     public partial class Form1 : Form
     {
-        public Form1()
+        //Last generated method
+        public Form1(string username)
         {
             InitializeComponent();
             panelSelected.Height = btn_add.Height;
             panelSelected.Top = btn_add.Top;
+            label2.Text = username; 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -38,11 +40,11 @@ namespace Gui_WinFormApp
             {
                 if (!string.IsNullOrEmpty(txt_objectName.Text) && !string.IsNullOrEmpty(txt_count.Text)
                     && !string.IsNullOrEmpty(txt_number.Text) && !string.IsNullOrEmpty(txt_price.Text)
-                    && !string.IsNullOrEmpty(txt_SKU.Text) && !string.IsNullOrEmpty(txt_PhonNo.Text) 
+                    && !string.IsNullOrEmpty(txt_SKU.Text) && !string.IsNullOrEmpty(txt_PhonNo.Text)
                     && !string.IsNullOrEmpty(txt_Email.Text))
                 {
                     //try{
-                        p.Count = Convert.ToInt32(txt_count.Text);
+                    p.Count = Convert.ToInt32(txt_count.Text);
                     //}catch (Exception);
                     p.ItemName = txt_objectName.Text;
                     p.ItemNumber = txt_number.Text;
@@ -60,14 +62,31 @@ namespace Gui_WinFormApp
                     {
                         p.Email = txt_Email.Text;
                     }
-                    else 
+                    else
                     {
                         txt_Email.Text = "ex: abc1@gmail.com";
                     }
-                    p.save();
-                    dgvShowProducts.DataSource = null;
-                    dgvShowProducts.DataSource = Product.getAllProducts();
-                    errorProvider1.Clear();
+
+                    string items = "";
+                    foreach (var item in chk_options.CheckedItems)
+                    {
+                        items += item.ToString();
+                    }
+                    MessageBox.Show(items);
+
+
+
+                    p.isAvailable = chkIsAvailable.Checked;
+                    if (p.isAvailable)
+                    {
+                        p.save();
+                        dgvShowProducts.DataSource = null;
+                        dgvShowProducts.DataSource = Product.getAllProducts();
+                        errorProvider1.Clear();
+                    }
+                    else {
+                        MessageBox.Show("Product is not available!!");
+                    }
                 }
                 else
                 {
@@ -124,6 +143,21 @@ namespace Gui_WinFormApp
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkIsAvailable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }

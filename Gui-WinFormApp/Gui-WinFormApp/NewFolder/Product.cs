@@ -16,6 +16,8 @@ namespace Gui_WinFormApp.NewFolder
         public string Sku { get; set; }
         public string phoneNo { get; set; }
 
+        public bool isAvailable { get; set; }
+
         // The below properties will move to their own Customer class later
         public string Email { get; set; }
         public string Name { get; set; }

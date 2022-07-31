@@ -16,3 +16,4 @@ C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Debug\net6.0-window
 C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Debug\net6.0-windows\Gui-WinFormApp.pdb
 C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Debug\net6.0-windows\Gui-WinFormApp.genruntimeconfig.cache
 C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Debug\net6.0-windows\ref\Gui-WinFormApp.dll
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Debug\net6.0-windows\Gui_WinFormApp.Login.resources
