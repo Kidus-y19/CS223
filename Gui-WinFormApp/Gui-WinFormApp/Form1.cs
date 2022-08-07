@@ -6,14 +6,23 @@ namespace Gui_WinFormApp
     public partial class Form1 : Form
     {
         //Last generated method
-        public Form1(string username)
+        public Form1()
+        {
+            InitializeComponent();
+            panelSelected.Height = btn_add.Height;
+            panelSelected.Top = btn_add.Top;
+
+        }
+        
+        /*
+         public Form1(string username)
         {
             InitializeComponent();
             panelSelected.Height = btn_add.Height;
             panelSelected.Top = btn_add.Top;
             label2.Text = username; 
         }
-
+        */
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -160,6 +169,22 @@ namespace Gui_WinFormApp
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string name;
+            name = txtSearch.Text;
+            Product p = new Product();
+            p = null;
+            if (Product.findOneByName(name) != null)
+            {
+                p = Product.findOneByName(name);
+            }
+            if (p != null)
+                lblSearch.Text = p.ItemName;
+            else
+                lblSearch.Text = "Item not found";
         }
     }
 }

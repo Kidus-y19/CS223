@@ -34,5 +34,10 @@ namespace Gui_WinFormApp.NewFolder
         {
             return products;
         }
+        public static Product findOneByName(string name)
+        {
+            //Product p = new Product();
+            return products.Find(p => p.ItemName == name);
+        }
     }
 }

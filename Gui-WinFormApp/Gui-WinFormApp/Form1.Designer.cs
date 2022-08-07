@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.txt_SKU = new System.Windows.Forms.TextBox();
             this.dtp_datepicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,8 +52,10 @@
             this.txt_PhonNo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chk_options = new System.Windows.Forms.CheckedListBox();
             this.grpBxPaymentMethods = new System.Windows.Forms.GroupBox();
             this.rbPaypal = new System.Windows.Forms.RadioButton();
             this.rbTelebirr = new System.Windows.Forms.RadioButton();
@@ -60,14 +63,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.chk_options = new System.Windows.Forms.CheckedListBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.chkIsAvailable = new System.Windows.Forms.CheckBox();
             this.lblCustName = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.lblCustEmail = new System.Windows.Forms.Label();
             this.lblCustomerDetails = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,15 +242,21 @@
             // 
             // dgvShowProducts
             // 
-            this.dgvShowProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(75)))));
+            this.dgvShowProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
             this.dgvShowProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvShowProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvShowProducts.Location = new System.Drawing.Point(0, 167);
             this.dgvShowProducts.Name = "dgvShowProducts";
             this.dgvShowProducts.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(155)))), ((int)(((byte)(163)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(155)))), ((int)(((byte)(163)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
+            this.dgvShowProducts.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShowProducts.RowTemplate.Height = 29;
-            this.dgvShowProducts.Size = new System.Drawing.Size(936, 159);
+            this.dgvShowProducts.Size = new System.Drawing.Size(870, 159);
             this.dgvShowProducts.TabIndex = 9;
             this.dgvShowProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowProducts_CellContentClick);
             // 
@@ -285,7 +296,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblHome);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -293,6 +304,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 125);
             this.panel3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "label2";
             // 
             // lblHome
             // 
@@ -307,22 +328,40 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.chk_options);
             this.panel2.Controls.Add(this.grpBxPaymentMethods);
             this.panel2.Controls.Add(this.dgvShowProducts);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(250, 268);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(936, 326);
+            this.panel2.Size = new System.Drawing.Size(870, 326);
             this.panel2.TabIndex = 13;
+            // 
+            // chk_options
+            // 
+            this.chk_options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.chk_options.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chk_options.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.chk_options.FormattingEnabled = true;
+            this.chk_options.Items.AddRange(new object[] {
+            "Product Availability",
+            "Delivery",
+            "Promo Code",
+            "New"});
+            this.chk_options.Location = new System.Drawing.Point(606, 35);
+            this.chk_options.Name = "chk_options";
+            this.chk_options.Size = new System.Drawing.Size(266, 108);
+            this.chk_options.TabIndex = 16;
+            this.chk_options.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // grpBxPaymentMethods
             // 
             this.grpBxPaymentMethods.Controls.Add(this.rbPaypal);
             this.grpBxPaymentMethods.Controls.Add(this.rbTelebirr);
             this.grpBxPaymentMethods.ForeColor = System.Drawing.Color.White;
-            this.grpBxPaymentMethods.Location = new System.Drawing.Point(6, 18);
+            this.grpBxPaymentMethods.Location = new System.Drawing.Point(6, 35);
             this.grpBxPaymentMethods.Name = "grpBxPaymentMethods";
-            this.grpBxPaymentMethods.Size = new System.Drawing.Size(250, 125);
+            this.grpBxPaymentMethods.Size = new System.Drawing.Size(250, 108);
             this.grpBxPaymentMethods.TabIndex = 17;
             this.grpBxPaymentMethods.TabStop = false;
             this.grpBxPaymentMethods.Text = "Payment";
@@ -359,6 +398,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.lbl_number);
             this.panel4.Controls.Add(this.txt_number);
@@ -390,7 +430,10 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.chk_options);
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
+            this.panel5.Controls.Add(this.txtSearch);
+            this.panel5.Controls.Add(this.lblSearch);
+            this.panel5.Controls.Add(this.btnSearch);
             this.panel5.Controls.Add(this.chkIsAvailable);
             this.panel5.Controls.Add(this.lblCustName);
             this.panel5.Controls.Add(this.txt_Name);
@@ -400,28 +443,39 @@
             this.panel5.Controls.Add(this.lbl_phoneNo);
             this.panel5.Controls.Add(this.txt_PhonNo);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(649, 0);
+            this.panel5.Location = new System.Drawing.Point(664, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(537, 268);
+            this.panel5.Size = new System.Drawing.Size(456, 268);
             this.panel5.TabIndex = 16;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // chk_options
+            // txtSearch
             // 
-            this.chk_options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.chk_options.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.chk_options.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.chk_options.FormattingEnabled = true;
-            this.chk_options.Items.AddRange(new object[] {
-            "Product Availability",
-            "Delivery",
-            "Promo Code",
-            "New"});
-            this.chk_options.Location = new System.Drawing.Point(135, 143);
-            this.chk_options.Name = "chk_options";
-            this.chk_options.Size = new System.Drawing.Size(266, 108);
-            this.chk_options.TabIndex = 16;
-            this.chk_options.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.txtSearch.Location = new System.Drawing.Point(290, 179);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(125, 32);
+            this.txtSearch.TabIndex = 18;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.BackColor = System.Drawing.Color.White;
+            this.lblSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSearch.ForeColor = System.Drawing.Color.Black;
+            this.lblSearch.Location = new System.Drawing.Point(168, 211);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(2, 25);
+            this.lblSearch.TabIndex = 17;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(168, 179);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 29);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // chkIsAvailable
             // 
@@ -482,21 +536,20 @@
             this.lblCustomerDetails.TabIndex = 0;
             this.lblCustomerDetails.Text = "Customer Details";
             // 
-            // label2
+            // panel6
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(97)))), ((int)(((byte)(95)))));
+            this.panel6.Location = new System.Drawing.Point(641, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(20, 268);
+            this.panel6.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1186, 594);
+            this.ClientSize = new System.Drawing.Size(1120, 594);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelSelected);
@@ -507,6 +560,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -564,5 +618,9 @@
         private RadioButton rbPaypal;
         private RadioButton rbTelebirr;
         private Label label2;
+        private Label lblSearch;
+        private Button btnSearch;
+        private TextBox txtSearch;
+        private Panel panel6;
     }
 }

@@ -24,8 +24,9 @@ namespace Gui_WinFormApp
 
             if (username == "admin" && password == "admin")
             {
-                Form1 HomePage = new Form1(username);
-                HomePage.Show();
+                //Form1 HomePage = new Form1();
+                ontainer ActiveCon = new ontainer();
+                ActiveCon.Show();
                 Hide();
             }
         }
