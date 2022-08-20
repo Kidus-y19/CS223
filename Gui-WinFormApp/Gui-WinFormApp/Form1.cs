@@ -6,14 +6,14 @@ namespace Gui_WinFormApp
     public partial class Form1 : Form
     {
         //Last generated method
-        public Form1()
+        public Form1(string name)
         {
             InitializeComponent();
             panelSelected.Height = btn_add.Height;
             panelSelected.Top = btn_add.Top;
-
+            lblUserN.Text = name;
         }
-        
+
         /*
          public Form1(string username)
         {
@@ -23,6 +23,12 @@ namespace Gui_WinFormApp
             label2.Text = username; 
         }
         */
+
+        private void productCard_Click(Object o, EventArgs e)
+        {
+            MessageBox.Show("Clicked");
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -89,13 +95,36 @@ namespace Gui_WinFormApp
                     if (p.isAvailable)
                     {
                         p.save();
+                        /*
                         dgvShowProducts.DataSource = null;
                         dgvShowProducts.DataSource = Product.getAllProducts();
+                        */
                         errorProvider1.Clear();
                     }
                     else {
                         MessageBox.Show("Product is not available!!");
                     }
+
+
+                    List<Product> products = new List<Product> ();
+                    products = Product.getAllProducts();
+                    flowLayoutPanel1.Controls.Clear();
+                    foreach (var item in products)
+                    {
+                        ProductCard p2 = new ProductCard();
+                        p2.Price = item.Price.ToString();
+                        p2.Title = item.ItemName;
+                        p2.Desc = item.Count.ToString();
+                        p2.Click += (Object o, EventArgs e) =>
+                        {
+                           // MessageBox.Show(item.ItemName);
+                           TableLayout page = new TableLayout();
+                            page.Show();
+                        };
+                        flowLayoutPanel1.Controls.Add(p2);
+                        
+                    }
+
                 }
                 else
                 {
@@ -185,6 +214,19 @@ namespace Gui_WinFormApp
                 lblSearch.Text = p.ItemName;
             else
                 lblSearch.Text = "Item not found";
+        }
+
+        private void btn_AutoFill_Click(object sender, EventArgs e)
+        {
+
+            panelSelected.Height = btn_reset.Height;
+            panelSelected.Top = btn_reset.Top;
+            txt_number.Text = "1";
+            txt_count.Text = "5";
+            txt_objectName.Text = "Milk";
+            txt_price.Text = "100";
+            txt_SKU.Text = "???";
+
         }
     }
 }

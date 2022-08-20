@@ -12,8 +12,10 @@ namespace Gui_WinFormApp
 {
     public partial class ontainer : Form
     {
-        public ontainer()
+        string user_name;
+        public ontainer(string name)
         {
+            user_name = name;
             InitializeComponent();
         }
 
@@ -35,7 +37,7 @@ namespace Gui_WinFormApp
             {
                 ActiveMdiChild.Close();
             }
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(user_name);
             form1.MdiParent = this;
             form1.Dock = DockStyle.Fill;    
             form1.Show();

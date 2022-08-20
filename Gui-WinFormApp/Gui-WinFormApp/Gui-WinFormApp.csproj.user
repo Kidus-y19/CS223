@@ -10,5 +10,17 @@
     <Compile Update="ontainer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PanelsAndDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="TableLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TocheckUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

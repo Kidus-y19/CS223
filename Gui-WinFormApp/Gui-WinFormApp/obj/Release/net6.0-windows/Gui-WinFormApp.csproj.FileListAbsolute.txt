@@ -1,0 +1,13 @@
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.Form1.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.Login.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.ontainer.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.PanelsAndDock.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.ProductCard.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.Properties.Resources.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui_WinFormApp.TocheckUserControl.resources
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.AssemblyInfo.cs
+C:\Users\DELL\source\repos\Gui-WinFormApp\Gui-WinFormApp\obj\Release\net6.0-windows\Gui-WinFormApp.csproj.CoreCompileInputs.cache

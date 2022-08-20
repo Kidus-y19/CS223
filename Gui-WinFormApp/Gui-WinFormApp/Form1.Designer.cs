@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.txt_SKU = new System.Windows.Forms.TextBox();
             this.dtp_datepicker1 = new System.Windows.Forms.DateTimePicker();
@@ -46,15 +45,15 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
-            this.dgvShowProducts = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbl_phoneNo = new System.Windows.Forms.Label();
             this.txt_PhonNo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUserN = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.chk_options = new System.Windows.Forms.CheckedListBox();
             this.grpBxPaymentMethods = new System.Windows.Forms.GroupBox();
             this.rbPaypal = new System.Windows.Forms.RadioButton();
@@ -73,7 +72,7 @@
             this.lblCustEmail = new System.Windows.Forms.Label();
             this.lblCustomerDetails = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowProducts)).BeginInit();
+            this.btn_AutoFill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -240,26 +239,6 @@
             this.btn_reset.UseVisualStyleBackColor = true;
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
-            // dgvShowProducts
-            // 
-            this.dgvShowProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
-            this.dgvShowProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShowProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShowProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvShowProducts.Location = new System.Drawing.Point(0, 167);
-            this.dgvShowProducts.Name = "dgvShowProducts";
-            this.dgvShowProducts.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(155)))), ((int)(((byte)(163)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(155)))), ((int)(((byte)(163)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
-            this.dgvShowProducts.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvShowProducts.RowTemplate.Height = 29;
-            this.dgvShowProducts.Size = new System.Drawing.Size(870, 159);
-            this.dgvShowProducts.TabIndex = 9;
-            this.dgvShowProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowProducts_CellContentClick);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -297,7 +276,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lblUserN);
             this.panel3.Controls.Add(this.lblHome);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -305,15 +284,15 @@
             this.panel3.Size = new System.Drawing.Size(250, 125);
             this.panel3.TabIndex = 0;
             // 
-            // label2
+            // lblUserN
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.lblUserN.AutoSize = true;
+            this.lblUserN.ForeColor = System.Drawing.Color.White;
+            this.lblUserN.Location = new System.Drawing.Point(0, 9);
+            this.lblUserN.Name = "lblUserN";
+            this.lblUserN.Size = new System.Drawing.Size(72, 23);
+            this.lblUserN.TabIndex = 5;
+            this.lblUserN.Text = "label2";
             // 
             // lblHome
             // 
@@ -328,14 +307,24 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.chk_options);
             this.panel2.Controls.Add(this.grpBxPaymentMethods);
-            this.panel2.Controls.Add(this.dgvShowProducts);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(250, 268);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(870, 326);
             this.panel2.TabIndex = 13;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 201);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(870, 125);
+            this.flowLayoutPanel1.TabIndex = 18;
             // 
             // chk_options
             // 
@@ -431,6 +420,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(100)))), ((int)(((byte)(92)))));
+            this.panel5.Controls.Add(this.btn_AutoFill);
             this.panel5.Controls.Add(this.txtSearch);
             this.panel5.Controls.Add(this.lblSearch);
             this.panel5.Controls.Add(this.btnSearch);
@@ -544,6 +534,16 @@
             this.panel6.Size = new System.Drawing.Size(20, 268);
             this.panel6.TabIndex = 17;
             // 
+            // btn_AutoFill
+            // 
+            this.btn_AutoFill.Location = new System.Drawing.Point(338, 12);
+            this.btn_AutoFill.Name = "btn_AutoFill";
+            this.btn_AutoFill.Size = new System.Drawing.Size(94, 29);
+            this.btn_AutoFill.TabIndex = 19;
+            this.btn_AutoFill.Text = "Auto Fill";
+            this.btn_AutoFill.UseVisualStyleBackColor = true;
+            this.btn_AutoFill.Click += new System.EventHandler(this.btn_AutoFill_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -562,7 +562,6 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -595,7 +594,6 @@
         private Button btn_add;
         private Button btn_cancel;
         private Button btn_reset;
-        private DataGridView dgvShowProducts;
         private ErrorProvider errorProvider1;
         private TextBox txt_PhonNo;
         private Label lbl_phoneNo;
@@ -617,10 +615,12 @@
         private GroupBox grpBxPaymentMethods;
         private RadioButton rbPaypal;
         private RadioButton rbTelebirr;
-        private Label label2;
+        private Label lblUserN;
         private Label lblSearch;
         private Button btnSearch;
         private TextBox txtSearch;
         private Panel panel6;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button btn_AutoFill;
     }
 }

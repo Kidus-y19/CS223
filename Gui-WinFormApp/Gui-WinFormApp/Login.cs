@@ -19,13 +19,13 @@ namespace Gui_WinFormApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
-            string password = textBox2.Text;
+            string username = txtUserName.Text;
+            string password = txtPassword.Text;
 
-            if (username == "admin" && password == "admin")
+            if (password == "admin")
             {
                 //Form1 HomePage = new Form1();
-                ontainer ActiveCon = new ontainer();
+                ontainer ActiveCon = new ontainer(txtUserName.Text);
                 ActiveCon.Show();
                 Hide();
             }
