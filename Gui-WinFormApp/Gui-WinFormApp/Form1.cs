@@ -115,11 +115,12 @@ namespace Gui_WinFormApp
                         p2.Price = item.Price.ToString();
                         p2.Title = item.ItemName;
                         p2.Desc = item.Count.ToString();
+
                         p2.Click += (Object o, EventArgs e) =>
                         {
-                           // MessageBox.Show(item.ItemName);
-                           TableLayout page = new TableLayout();
-                            page.Show();
+                            MessageBox.Show("You have bought " + item.Count + " " + item.ItemName);
+                          // TableLayout page = new TableLayout();
+                           // page.Show();
                         };
                         flowLayoutPanel1.Controls.Add(p2);
                         
